@@ -23,10 +23,10 @@ public class Game {
         Player player1 = findByName(playerName1);
         Player player2 = findByName(playerName2);
 
-        if (!isRegistered(player1)) {
+        if (player1 == null) {
             throw new NotRegisteredException(String.format("Player %s is not registered", playerName1));
         }
-        if (!isRegistered(player2)) {
+        if (player2 == null) {
             throw new NotRegisteredException(String.format("Player %s is not registered", playerName2));
         }
 
@@ -40,17 +40,5 @@ public class Game {
             }
         }
         return null;
-    }
-
-    public boolean isRegistered(Player currentPlayer) {
-        if (currentPlayer == null) {
-            return false;
-        }
-        for (Player player : players) {
-            if (player == currentPlayer) {
-                return true;
-            }
-        }
-        return false;
     }
 }

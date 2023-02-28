@@ -58,19 +58,4 @@ public class GameTest {
         assertEquals(player2, game.findByName("Bob"));
         assertNull(game.findByName("Charlie"));
     }
-
-    @Test
-    public void testIsRegistered() {
-        Game game = new Game();
-        Player player1 = new Player(1, "Alice", 10);
-        Player player2 = new Player(2, "Bob", 20);
-
-        game.register(player1);
-        game.register(player2);
-
-        assertTrue(game.isRegistered(player1));
-        assertTrue(game.isRegistered(player2));
-        assertFalse(game.isRegistered(null));
-        assertFalse(game.isRegistered(new Player(3, "Charlie", 30)));
-    }
 }
